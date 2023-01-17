@@ -8,8 +8,6 @@ function store(req, res) {
   db.query(sql, legoSet, (error, result) => {
     if (error) {
       throw error;
-    } else {
-      console.log(result);
     }
   });
 
@@ -21,8 +19,6 @@ function index(req, res) {
   db.query(sql, (error, result) => {
     if (error) {
       throw error;
-    } else {
-      console.log(result);
     }
     return res.status(200).json(result);
   });
@@ -33,8 +29,6 @@ function show(req, res) {
   db.query(sql, (error, result) => {
     if (error) {
       throw error;
-    } else {
-      console.log(result);
     }
     return res.status(200).json(result[0]);
   });
@@ -46,8 +40,6 @@ function deleteLegoSet(req, res) {
   db.query(sql, (error, result) => {
     if (error) {
       throw error;
-    } else {
-      console.log(result);
     }
     return res.status(200).json(result[0]);
   });
@@ -61,8 +53,6 @@ function update(req, res) {
   db.query(sql, legoSet, (error, result) => {
     if (error) {
       throw error;
-    } else {
-      console.log(result);
     }
     return res.status(200).json(result[0]);
   });
