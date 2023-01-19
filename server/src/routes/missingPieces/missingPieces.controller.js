@@ -6,8 +6,6 @@ function index(req, res) {
   if (params.id) {
     sql = `SELECT * FROM missing_pieces WHERE set_id = '${params.id}'`;
   }
-  console.log("sql");
-  console.log(sql);
   db.query(sql, (error, result) => {
     if (error) {
       throw error;
