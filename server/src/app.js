@@ -15,13 +15,27 @@ app.use(
   })
 );
 
-db.connect((error, connection) => {
-  if (error) {
-    throw error;
-  } else {
-    console.log("db connected");
-  }
-});
+let maxTries = 1;
+let delay = 3000;
+let tryCount = 0;
+
+function reconnect() {
+  db.connect((error, connection) => {
+    if (error) {
+      console.log(error);
+      console.log("Error connecting to database. Attempt: " + (tryCount + 1));
+      if (tryCount >= maxTries) {
+        throw new Error("Max tries reached. Giving up.");
+      }
+      tryCount++;
+      setTimeout(reconnect, delay);
+    } else {
+      console.log("db connected");
+    }
+  });
+}
+
+reconnect();
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "..", "public")));
