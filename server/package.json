@@ -1,7 +1,7 @@
 {
-  "name": "lego-manager",
+  "name": "lego-library",
   "version": "1.0.0",
-  "description": "Lego manager website",
+  "description": "Lego library website",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
