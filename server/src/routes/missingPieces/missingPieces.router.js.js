@@ -9,6 +9,5 @@ missingPiecesRouter.get("/missing-pieces", index);
 missingPiecesRouter.get("/missing-pieces/:id", index);
 missingPiecesRouter.patch("/missing-pieces/:piece_id", update);
 missingPiecesRouter.delete("/missing-pieces/:piece_id", deletePiece);
-// missingPiecesRouter.patch("/missing-pieces/:id", update);
 
 module.exports = missingPiecesRouter;

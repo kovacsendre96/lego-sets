@@ -18,6 +18,8 @@ function store(req, res) {
   const body = req.body;
   const sql = "INSERT INTO missing_pieces SET ?";
   body.forEach((piece) => {
+    console.log("....................piece");
+    console.log(piece);
     db.query(sql, piece, (error, result) => {
       if (error) {
         throw error;
