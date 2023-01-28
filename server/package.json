@@ -1,5 +1,5 @@
 {
-  "name": "lego-library",
+  "name": "lego-sets",
   "version": "1.0.0",
   "description": "Lego library website",
   "main": "server.js",
